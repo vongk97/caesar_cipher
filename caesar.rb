@@ -5,12 +5,12 @@ def caesar_encode (str,shift)
 	strList = str.split(" ")
 	encoded = [] 
 
-	strList.each do |x| 
+	strList.each do |x| #for each word in phrase we want to encode
 		word = []
-		x.each_char do |s|
+		x.each_char do |s| #for each letter of each word in the phrase calculate new position in alphabet
 			
 			
-			word.push(alphabeth[(alphabeth.index(s)+shift )%26])
+			word.push(alphabeth[(alphabeth.index(s)+shift )%26])#take the modulus in case the new value is bigger than the length of alphabet 
 
 		end
 		word.push(" ")
@@ -22,8 +22,8 @@ def caesar_encode (str,shift)
 end
 
 
-#puts caesar_encode("Rabbits are Purple", 5).join
+puts caesar_encode("Rabbits are Purple", 5).join
 
-puts caesar_encode("very", 5).join
+
 
 
